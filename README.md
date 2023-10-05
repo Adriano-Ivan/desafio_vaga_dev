@@ -10,7 +10,7 @@
 ![Produtos](./assets/tela_produtos.png)
 
 # Para rodar o projeto, é preciso:
-* rodar npm install no front para instalar dependências
+* rodar npm install no front para instalar dependências;
 * rodar Update-Database no console do Visual Studio ou utilizar o dotnet-ef para criar as tabelas numa base de dados;
 
 ![dbupdate](./assets/updatedb.png)
@@ -20,8 +20,8 @@
 * CRUD Completo. Por enquanto o projeto só tem o cadastro e a leitura;
 * Modal para criar produtos e clientes (creio que poderia ser mais intuitivo e limpo do que um formulário acima da listagem);
 * Detalhamento da quantidade de produtos que um cliente tem para si;
-* Listagem de produtos por cliente
-* Paginação
+* Listagem de produtos por cliente;
+* Paginação;
 
 ## Alguns padrões usados:
 
@@ -33,7 +33,7 @@
 
 ![dto](./assets/dto.png)
 
-* Injeção de dependência: não estou precisando instanciar ou utilizar referências estáticas de repositórios ou serviços. Em vez disso, como no exemplo abaixo, registrei um serviço na classe Program e assim eu consigo acessar o serviço na aplicação por meio de sua interface;
+* Injeção de dependência: não estou precisando instanciar ou utilizar referências estáticas de repositórios ou serviços. Em vez disso, como no exemplo abaixo, registrei um serviço na classe Program e assim eu consigo acessar o serviço na aplicação por meio de sua interface:
 
 ![inje](./assets/injecao2.png)
 
