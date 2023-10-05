@@ -1,6 +1,5 @@
 import { TableCell, TableRow, CircularProgress, Box} from "@mui/material";
 import useClientesList from "./hooks/useClientesList.hook";
-import { useEffect } from "react";
 import CustomizableContentTable from "../../components/customizableContentTable/customizableContentTable.component";
 import AreaDeInsercaoCliente from "./components/areaDeInsercaoCliente.component";
 

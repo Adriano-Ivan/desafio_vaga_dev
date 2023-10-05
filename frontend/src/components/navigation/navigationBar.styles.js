@@ -1,5 +1,5 @@
 
-const useStyles = ((theme) => ({
+const useStyles = (() => ({
     navlinks: {
       marginLeft: 20,
       display: "flex",

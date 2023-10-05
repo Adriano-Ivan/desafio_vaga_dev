@@ -1,4 +1,4 @@
-import { Grid, FormControl, TextField, Button, FormLabel, InputLabel, Select, MenuItem } from "@mui/material";
+import { Grid, FormControl, TextField, Button, FormLabel, Select, MenuItem } from "@mui/material";
 import useAreaDeInsercaoProduto from "./hooks/useAreaDeInsercaoProduto.hook";
 
 const AreaDeInsercaoProduto = ({funcInserirProduto}) => {

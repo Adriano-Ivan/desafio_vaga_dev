@@ -5,7 +5,7 @@
 * Cadastro e listagem de clientes;
 * Cadastro e listagem de produtos (com vínculo a cliente);
 * Validação de CPF de cliente: ao cadastrar um CPF duplicado ou no formato errado, o back-end valida e lança uma exceção para o front-end capturar;
-* Teste unitários de CPF;
+* Testes unitários de CPF;
 
 ![Clientes](./assets/tela_clientes.png)
 ![Produtos](./assets/tela_produtos.png)
@@ -16,7 +16,7 @@
 
 ![dbupdate](./assets/updatedb.png)
 
-## Que mais seria poderia ser feito, para melhorias futuras no projeto:
+## Que mais seria poderia ser feito, para melhorias futuras no projeto ?
 
 * CRUD Completo. Por enquanto o projeto só tem o cadastro e a leitura;
 * Modal para criar produtos e clientes (creio que poderia ser mais intuitivo e limpo do que um formulário acima da listagem);
