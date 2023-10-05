@@ -10,7 +10,6 @@ class ClientesApi extends CommonApi {
             return await super.create(cliente);
         } catch(e) {
             if(e.response?.data) {
-                console.log(e);
                 const error = e.response.data === "DUPLICATE_CPF" ? 'duplicate_cpf' : "invalid_cpf"
                 return {
                     'cpfError': error

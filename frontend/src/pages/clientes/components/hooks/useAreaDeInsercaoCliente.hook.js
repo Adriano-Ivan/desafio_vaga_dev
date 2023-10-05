@@ -8,9 +8,6 @@ const defaultFormValues = {
 const useAreaDeInsercaoCliente = () => {
     const [formValues, setFormValues] = useState(defaultFormValues);
 
-    useEffect(() => {
-        console.log(formValues)
-    },[formValues]);
     const handleFormChange = (changeData) => {
         setFormValues({
             ...formValues,
@@ -18,10 +15,15 @@ const useAreaDeInsercaoCliente = () => {
         })
     }
 
+    const emptyFields = () => {
+        return formValues.name.trim() === "" || formValues.cpf.trim() === "";
+    }
+
     return {
         formValues,
         setFormValues,
-        handleFormChange
+        handleFormChange,
+        emptyFields
     };
 }
 

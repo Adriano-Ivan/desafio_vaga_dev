@@ -7,10 +7,6 @@ import AreaDeInsercaoCliente from "./components/areaDeInsercaoCliente.component"
 const ClientesPage = () => {
     const {clientes, loading, insertCliente} = useClientesList();
     
-    useEffect(() => {
-      console.log('cc',clientes)
-    },[clientes]);
-
     const returnHeaders = () => {
       return (
         <TableRow>
@@ -41,9 +37,7 @@ const ClientesPage = () => {
 
         <Box sx={{display: "flex"}}>
           <CircularProgress size="6rem"/> 
-        </Box>
-
-      :
+        </Box>   :
 
       <>
           <AreaDeInsercaoCliente funcInserirCliente={insertCliente}/>

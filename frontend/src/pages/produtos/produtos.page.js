@@ -1,6 +1,7 @@
-import { TableRow, TableCell } from "@mui/material";
+import { TableRow, TableCell, Box, CircularProgress } from "@mui/material";
 import CustomizableContentTable from "../../components/customizableContentTable/customizableContentTable.component";
 import useProdutosList from "./hooks/useProdutosList.hook";
+import AreaDeInsercaoProduto from "./components/areaDeInsercaoProduto.component";
 
 const ProdutosPage = () => {
     const {produtos, loading, insertProduto} = useProdutosList();
@@ -31,11 +32,18 @@ const ProdutosPage = () => {
     }
 
     return (
+        loading ?
+            <Box sx={{display: "flex"}}>
+                <CircularProgress size="6rem"/> 
+            </Box>   :
+        <>
+            <AreaDeInsercaoProduto funcInserirProduto={insertProduto}/>
+            <CustomizableContentTable 
+                funcHeaders={returnHeaders}
+                funcContent={returnContent}
+            /> 
+        </>
 
-        <CustomizableContentTable 
-            funcHeaders={returnHeaders}
-            funcContent={returnContent}
-        /> 
     )
 }
 

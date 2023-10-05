@@ -10,14 +10,16 @@ const useProdutosList = () => {
     useEffect(() => {
         setLoading(true);
         produtosApi.list().then((response) => {
-            console.log(response);
             setProdutos(response.data);
             setLoading(false);
         });
     }, [flagToReset]);
 
-    const insertProduto = () => {
-
+    const insertProduto = async (produto) => {
+        setLoading(true);
+        const response = await produtosApi.create(produto);
+        setFlagToReset(!flagToReset);
+        return response;
     }
 
     return {

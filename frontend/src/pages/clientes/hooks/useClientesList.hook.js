@@ -10,7 +10,6 @@ const useClientesList = () => {
     useEffect(() => {
         setLoading(true);
         clientesApi.list().then((response) => {
-            console.log(response);
             setClientes(response.data);
             setLoading(false);
         });
@@ -19,7 +18,6 @@ const useClientesList = () => {
     const insertCliente = async (cliente) => {
         setLoading(true);
         const response = await clientesApi.create(cliente);
-        console.log(response);
         setFlagToReset(!flagToReset);
         return response;
     }

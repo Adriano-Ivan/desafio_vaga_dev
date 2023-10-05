@@ -1,21 +1,23 @@
 import { Button, FormControl, FormLabel, Grid,TextField } from "@mui/material";
-import { useState } from "react";
 import useAreaDeInsercaoCliente from "./hooks/useAreaDeInsercaoCliente.hook";
 
 
 const AreaDeInsercaoCliente = ({funcInserirCliente}) => {
-    const {formValues, handleFormChange} = useAreaDeInsercaoCliente();
+    const {formValues, handleFormChange, emptyFields} = useAreaDeInsercaoCliente();
 
     const createCliente = async () => {
-         const response = await funcInserirCliente(formValues);
+         if(emptyFields()) {
+            alert("Os campos não podem estar vazios")
+         } else {
+            const response = await funcInserirCliente(formValues);
 
-         if(response.cpfError === "invalid_cpf") {
-            alert('CPF é inválido !!')
-         } else if(response.cpfError === "duplicate_cpf") {
-            alert("CPF duplicado !! Favor inserir outro CPF !!")
+            if(response.cpfError === "invalid_cpf") {
+               alert('CPF é inválido !!')
+            } else if(response.cpfError === "duplicate_cpf") {
+               alert("CPF duplicado !! Favor inserir outro CPF !!")
+            }
          }
     }
-
 
     return (
         <form >
