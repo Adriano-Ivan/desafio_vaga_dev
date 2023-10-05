@@ -38,7 +38,7 @@ namespace ClientesAPI.Services
 
         public async Task<List<ReadProdutoDTO>> GetProdutos()
         {
-            List<ProdutoModel> produtos = await _produtoRepository.GetAllWithClientes();
+            List<ProdutoModel> produtos = await _produtoRepository.GetAllProdutosOrderedByCreationWithClientes();
             List<ReadProdutoDTO> produtosDTO = _mapper.Map<List<ReadProdutoDTO>>(produtos);
 
             return produtosDTO;

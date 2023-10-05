@@ -36,6 +36,11 @@ namespace ClientesAPI.Repositories
             return produto;
         }
 
+        public async Task<List<ProdutoModel>> GetAllProdutosOrderedByCreationWithClientes()
+        {
+            return await _clientesAPIContext.Produtos.Include(e => e.Cliente).OrderByDescending(e => e.CreatedAt).ToListAsync();
+        }
+
         public async Task<List<ProdutoModel>> GetAllWithClientes()
         {
             return await _clientesAPIContext.Produtos.Include(e => e.Cliente).ToListAsync();

@@ -19,7 +19,7 @@ namespace ClientesAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ReturnAllClientes()
+        public async Task<IActionResult> ReturnAllProdutos()
         {
             List<ReadProdutoDTO> clientes = await _produtoService.GetProdutos();
 

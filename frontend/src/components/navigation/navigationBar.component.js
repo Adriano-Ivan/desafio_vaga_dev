@@ -1,5 +1,5 @@
-import { AppBar, Typography, Toolbar, Menu, MenuItem,Box, CssBaseline} from "@mui/material";
-import { Link, Outlet } from "react-router-dom";
+import { AppBar, Toolbar, MenuItem, CssBaseline} from "@mui/material";
+import {  Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import useStyles from "./navigationBar.styles";
 

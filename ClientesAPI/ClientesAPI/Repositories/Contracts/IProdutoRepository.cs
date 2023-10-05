@@ -7,5 +7,6 @@ namespace ClientesAPI.Repositories.Contracts
     {
        Task<ProdutoModel> ChangeCliente(Guid clientId, Guid produtoId);
        Task<List<ProdutoModel>> GetAllWithClientes();
+       Task<List<ProdutoModel>> GetAllProdutosOrderedByCreationWithClientes();
     }
 }

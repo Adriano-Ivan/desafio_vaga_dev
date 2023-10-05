@@ -28,7 +28,7 @@ namespace ClientesAPI.Services
 
         public async Task<List<ReadClienteDTO>> GetClientes()
         {
-            List<ClienteModel> clientes = await _clienteRepository.GetAllAsync();
+            List<ClienteModel> clientes = await _clienteRepository.GetAllClientesOrderedByCreation();
             List<ReadClienteDTO> clientesDTO = _mapper.Map<List<ReadClienteDTO>>(clientes);
 
             return clientesDTO;

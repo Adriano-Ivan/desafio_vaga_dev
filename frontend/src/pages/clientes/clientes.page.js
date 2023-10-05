@@ -1,39 +1,59 @@
-import { TableContainer,Table, TableBody, TableHead,TableCell, TableRow,Paper} from "@mui/material";
+import { TableCell, TableRow, CircularProgress, Box} from "@mui/material";
 import useClientesList from "./hooks/useClientesList.hook";
 import { useEffect } from "react";
+import CustomizableContentTable from "../../components/customizableContentTable/customizableContentTable.component";
+import AreaDeInsercaoCliente from "./components/areaDeInsercaoCliente.component";
 
 const ClientesPage = () => {
-    const {clientes} = useClientesList();
+    const {clientes, loading, insertCliente} = useClientesList();
     
     useEffect(() => {
       console.log('cc',clientes)
-    },[clientes])
+    },[clientes]);
+
+    const returnHeaders = () => {
+      return (
+        <TableRow>
+          <TableCell>Nome</TableCell>
+          <TableCell align="right">CPF</TableCell>
+        </TableRow>
+      ) ;
+    }
+
+    const returnContent = () => {
+        return (
+          clientes.map((cliente) => (
+            <TableRow
+              key={cliente.id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {cliente.name}
+              </TableCell>
+              <TableCell align="right">{cliente.cpf}</TableCell>
+            </TableRow>
+          ))
+        );
+    }
+
     return (
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Nome</TableCell>
-                <TableCell align="right">CPF</TableCell>
-       
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {clientes.map((cliente) => (
-                <TableRow
-                  key={cliente.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {cliente.name}
-                  </TableCell>
-                  <TableCell align="right">{cliente.cpf}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      );
+      loading ? 
+
+        <Box sx={{display: "flex"}}>
+          <CircularProgress size="6rem"/> 
+        </Box>
+
+      :
+
+      <>
+          <AreaDeInsercaoCliente funcInserirCliente={insertCliente}/>
+          <CustomizableContentTable 
+            funcHeaders={returnHeaders}
+            funcContent={returnContent}
+          /> 
+      </>
+   
+    )
 }
 
 export default ClientesPage;

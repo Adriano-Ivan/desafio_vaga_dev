@@ -10,6 +10,12 @@ class CommonApi {
       console.log(itens);
       return itens;
     }
+
+    async create(obj){
+      const createdItem = await axiosInstance.post(this._rota, obj);
+      console.log(createdItem);
+      return createdItem;
+    }
 }
 
 export default CommonApi;

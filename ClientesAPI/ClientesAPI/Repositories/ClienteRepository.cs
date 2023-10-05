@@ -20,5 +20,10 @@ namespace ClientesAPI.Repositories
             ClienteModel clienteModel = await _clientesAPIContext.Clientes.FirstOrDefaultAsync(e => e.Cpf.Equals(cpf));
             return clienteModel;
         }
+        
+        public async Task<List<ClienteModel>> GetAllClientesOrderedByCreation()
+        {
+            return await _clientesAPIContext.Clientes.OrderByDescending(e => e.CreatedAt).ToListAsync();
+        }
     }
 }
