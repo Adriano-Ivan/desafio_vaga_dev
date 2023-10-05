@@ -4,9 +4,16 @@
 
 * Cadastro e listagem de clientes;
 * Cadastro e listagem de produtos (com vínculo a cliente);
+* Validação de CPF de cliente: ao cadastrar um CPF duplicado ou no formato errado, o back-end valida e lança uma exceção para o front-end capturar;
 
 ![Clientes](./assets/tela_clientes.png)
 ![Produtos](./assets/tela_produtos.png)
+
+# Para rodar o projeto, é preciso:
+* rodar npm install no front para instalar dependências
+* rodar Update-Database no console do Visual Studio ou utilizar o dotnet-ef para criar as tabelas numa base de dados;
+
+![dbupdate](./assets/updatedb.png)
 
 ## Que mais seria poderia ser feito, para melhorias futuras no projeto:
 
