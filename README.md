@@ -5,6 +5,7 @@
 * Cadastro e listagem de clientes;
 * Cadastro e listagem de produtos (com vínculo a cliente);
 * Validação de CPF de cliente: ao cadastrar um CPF duplicado ou no formato errado, o back-end valida e lança uma exceção para o front-end capturar;
+* Teste unitários de CPF;
 
 ![Clientes](./assets/tela_clientes.png)
 ![Produtos](./assets/tela_produtos.png)
